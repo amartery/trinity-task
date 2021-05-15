@@ -1,0 +1,5 @@
+DROP TABLE Comments;
+
+DROP TABLE Likes;
+
+DROP TABLE Users;
