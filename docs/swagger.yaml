@@ -1,0 +1,173 @@
+basePath: /
+definitions:
+  models.CommentRequest:
+    properties:
+      create:
+        type: string
+      id:
+        type: string
+      text:
+        type: string
+      user_id:
+        type: string
+      video_id:
+        type: string
+    type: object
+  models.ErrorResponse:
+    properties:
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  models.Like:
+    properties:
+      create:
+        type: string
+      user_id:
+        type: string
+      video_id:
+        type: string
+    type: object
+  models.User:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API for statistic server
+  title: Trinity-task
+  version: "1.0"
+paths:
+  /api/v1/add-comment:
+    post:
+      consumes:
+      - application/json
+      description: adding comment for debug
+      operationId: add-comment
+      parameters:
+      - description: comment
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.CommentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Add comment
+      tags:
+      - debug
+  /api/v1/add-like:
+    post:
+      consumes:
+      - application/json
+      description: adding like for debug
+      operationId: add-like
+      parameters:
+      - description: like
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.Like'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Add like
+      tags:
+      - debug
+  /api/v1/add-user:
+    post:
+      consumes:
+      - application/json
+      description: adding user for debug
+      operationId: add-user
+      parameters:
+      - description: user
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Add user
+      tags:
+      - debug
+  /api/v1/get-active-today:
+    get:
+      description: getting users who have liked or commented today
+      operationId: get-active
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Get Today Activities
+      tags:
+      - api
+swagger: "2.0"

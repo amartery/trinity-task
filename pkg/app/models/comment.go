@@ -7,3 +7,7 @@ type CommentRequest struct {
 	UserId   string `json:"user_id"`
 	CreateAt string `json:"create"`
 }
+
+var (
+	CommentForSwagger = CommentRequest{VideoId: "12", Text: "very cool", UserId: "2", CreateAt: "2021-05-15 12:00:00"}
+)

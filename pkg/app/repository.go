@@ -7,7 +7,7 @@ import (
 type Repository interface {
 	AddUser(u *models.User) error
 	AddComment(u *models.CommentRequest) error
-	AddLike(u *models.Lile) error
+	AddLike(u *models.Like) error
 	GetTodayActivityComments() ([]models.User, error)
 	GetTodayActivityLikes() ([]models.User, error)
 }

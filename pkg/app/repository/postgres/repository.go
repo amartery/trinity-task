@@ -85,7 +85,7 @@ func (r *AppRepository) AddComment(u *models.CommentRequest) error {
 	return r.con.QueryRow(query, u.VideoId, u.Text, u.UserId, u.CreateAt).Scan(&u.Id)
 }
 
-func (r *AppRepository) AddLike(u *models.Lile) error {
+func (r *AppRepository) AddLike(u *models.Like) error {
 	query := `INSERT INTO Likes (video_id, user_id, create_at) 
 			  VALUES ($1, $2, $3);`
 	_, err := r.con.Exec(query, u.VideoId, u.UserId, u.CreateAt)

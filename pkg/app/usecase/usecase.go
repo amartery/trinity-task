@@ -66,7 +66,7 @@ func (use *AppUsecase) AddComment(u *models.CommentRequest) error {
 	return use.repository.AddComment(u)
 }
 
-func (use *AppUsecase) AddLike(u *models.Lile) error {
+func (use *AppUsecase) AddLike(u *models.Like) error {
 	// TODO валидация
 	return use.repository.AddLike(u)
 }

@@ -17,6 +17,13 @@ var (
 	configPath string = "./config/conf.toml"
 )
 
+// @title Trinity-task
+// @version 1.0
+// @description API for statistic server
+
+// @host localhost:8080
+// @BasePath /
+
 func main() {
 	config := config.NewConfig()
 

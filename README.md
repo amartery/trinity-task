@@ -9,6 +9,8 @@ migrate -path ./schema -database 'postgres://postgres:password@localhost:5436/po
 ### **Старт сервера**  
 make  
 http://127.0.0.1:8080/  
+документация swagger  
+http://127.0.0.1:8080/swagger/index.html  
 
 ### **Тестирование**
 ### добавление нового пользователя 
