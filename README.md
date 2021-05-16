@@ -1,15 +1,6 @@
 # **Запуск**
-### **Развертывание базы данных** 
-sudo docker pull postgres:latest  
-sudo docker run --name=trinity_db -e POSTGRES_PASSWORD='password' -p 5436:5432 -d --rm postgres  
-
-### **Применение миграций**
-(находясь в корне проекта)  
-migrate -path ./schema -database 'postgres://postgres:password@localhost:5436/postgres?sslmode=disable' up  
-### **Старт сервера**  
-make  
-http://127.0.0.1:8080/  
-документация swagger  
+sudo docker-compose up  
+**документация swagger**  
 http://127.0.0.1:8080/swagger/index.html  
 
 ### **Тестирование**

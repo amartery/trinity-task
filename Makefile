@@ -5,7 +5,7 @@ build:
 
 .PHONY: migrate
 migrate:
-	migrate -path ./schema -database 'postgres://postgres:password@localhost:5436/postgres?sslmode=disable' up
+	migrate -path ./schema -database 'postgres://postgres:password@db:5432/postgres?sslmode=disable' up
 
 
 .PHONY: run
